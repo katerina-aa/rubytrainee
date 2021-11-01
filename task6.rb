@@ -48,7 +48,7 @@ class Business
     end
 end
 
-class WorkerAccountant 
+class Worker
     attr_reader :salary_accountant
     attr_accessor :name, :surname, :experience, :specialization, :salary_per_year 
 
@@ -57,7 +57,7 @@ class WorkerAccountant
         @surname = surname
         @experience = experience
         @specialization = specialization
-        @salary_per_year = 2000
+        @salary_per_year = 0
     end
     
     def get_salary_per_year()
@@ -69,7 +69,15 @@ class WorkerAccountant
     end
 end
 
-class WorkerLawyer < WorkerAccountant
+class WorkerAccountant < Worker
+    def initialize(name, surname, experience, specialization)
+        super
+        @salary_per_year = 2000
+    end
+    
+end
+
+class WorkerLawyer < Worker
     def initialize(name, surname, experience, specialization)
         super
         @salary_per_year = 3000
