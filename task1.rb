@@ -1,7 +1,9 @@
 =begin
+
 Create class, which contains instance, class and global variable.
 Create methods in class, which do manipulation(puts, calculates something based on it, etc.) with each type of variable: local, instance, class, global
 Create method in class, which would use string interpolation(this can be simple puts of one of the variables).
+
 =end
 
 class Calculator

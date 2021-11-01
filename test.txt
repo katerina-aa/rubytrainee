@@ -1,0 +1,8 @@
+Create class FileAnalyzer
+
+Based on the provided path, class should print out the following statistics of the file:
+- number of lines in file
+- number of empty lines in file
+- number of lines containing letter ‘y’
+Class should not have any public accessible methods.
+Al statistics should be printed on class instance creation - FileAnalyzer.new(’some_path’)
