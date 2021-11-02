@@ -25,7 +25,7 @@ class Vehicle
         @manufacturer = manufacturer
     end
 
-    def get()
+    def vehicle_info()
         puts "Your car is #{@manufacturer} #{@model}, #{@year}, owner - #{@owner}. Your car has #{@@count_of_wheels} wheels."
     end
 
@@ -38,8 +38,8 @@ car1 = Vehicle.new('Antonio', 1979, 'A3', 'Audi')
 car2 = Vehicle.new('no', 1988, '412', 'Moskvych')
 car3 = Vehicle.new('Tony', 1990, '', 'Skoda Fabia')
 
-car1.get()
-car2.get()
-car3.get()
+car1.vehicle_info()
+car2.vehicle_info()
+car3.vehicle_info()
 car3.change_owner('Vlad')
-car3.get()
+car3.vehicle_info()

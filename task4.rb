@@ -9,4 +9,6 @@ If no argument is passed - print message â€˜Please pass argument to the scriptâ€
 =end
 
 
-puts ARGV.size == 0 ? 'Please pass argument to the script!' :  ARGV
+puts ARGV.size ==0 ? 'Please pass argument to the script' : system("#{ARGV[0]}") 
+puts ARGV.size ==0 ? 'Please pass argument to the script' : `#{ARGV[0]}`
+puts ARGV.size ==0 ? 'Please pass argument to the script' : %x(#{ARGV[0]})

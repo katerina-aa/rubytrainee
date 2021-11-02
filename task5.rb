@@ -14,28 +14,26 @@ class FileAnalyzer
 
     def initialize(some_path)
         @file = File.open(some_path)
-        @file_text = @file.readlines.map{|x| x.chomp }
         statistics()
     end
 
     private
     def statistics()
-        puts "Number of lines in file is #{@file_text.size}."
-        puts "Number of empty lines in file is #{empty_lines()}."
-        puts "Number of lines containing letter ‘y’ is #{contains_y()}."
+        all_lines = 0
+        empty_lines = 0
+        with_y_lines = 0
+        
+        @file.readlines.each do |line|
+            all_lines += 1
+            empty_lines += 1 if line.eql?("\n")
+            with_y_lines += 1 if line.include?("y")
+        end
+
+        puts "Number of lines in file is #{all_lines}."
+        puts "Number of empty lines in file is #{empty_lines}."
+        puts "Number of lines containing letter ‘y’ is #{with_y_lines}."
     end
 
-    def empty_lines()
-        counter = 0
-        @file_text.each { |line| counter +=1 if line.empty? }
-        return counter
-    end
-
-    def contains_y()
-        counter = 0
-        @file_text.each { |line| counter +=1 if line.include?("y") }
-        return counter
-    end
 end
 
 FileAnalyzer.new('test.txt')

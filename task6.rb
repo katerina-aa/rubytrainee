@@ -30,8 +30,8 @@ class Business
         @workers = []
     end
 
-    def add_worker(name_of_business, worker)
-        @workers << worker if @name == name_of_business 
+    def add_worker(worker)
+        @workers << worker 
     end
 
     def business_info()
@@ -39,11 +39,9 @@ class Business
     end
 
     def workers_info()
-        i = 1
-        @workers.each do |elem|
-            puts "Info abour worker number #{i}:"
-            puts "Name and surname: #{elem.name} #{elem.surname}, specialization: #{elem.specialization}, salary: #{elem.salary_per_year}."
-            i += 1
+        @workers.each_with_index do |elem, i|
+            puts "Info abour worker number #{i + 1}:"
+            elem.info
         end
     end
 end
@@ -66,6 +64,10 @@ class Worker
 
     def get_salary_total()
         puts "Total salary is #{@salary_per_year * @experience}."
+    end
+
+    def info
+        puts "Name and surname: #{@name} #{@surname}, specialization: #{@specialization}, salary: #{@salary_per_year}."
     end
 end
 
@@ -93,9 +95,7 @@ worker2.get_salary_per_year()
 worker2.get_salary_total()
 
 business1 = Business.new('Accountant')
-business1.business_info()
-business1.add_worker('Accountant', worker1)
-business1.workers_info()
-business1.add_worker('Accountant', worker2)
+business1.add_worker(worker1)
+business1.add_worker(worker2)
 business1.business_info()
 business1.workers_info()
