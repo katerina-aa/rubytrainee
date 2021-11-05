@@ -8,4 +8,4 @@ get '/' do
   erb :index
 end
 
-require './models'
+require_relative 'models.rb'
