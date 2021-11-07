@@ -1,6 +1,6 @@
 users = [
-    {name: 'Jon'},
-    {name: 'Jane'}
+  { fname: 'Jon', lname: 'Doe' },
+  { fname: 'Jane', lname: 'Doe' }
 ]
 
 users.each do |u|

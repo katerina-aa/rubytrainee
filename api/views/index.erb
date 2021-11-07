@@ -4,10 +4,45 @@
     <title>Users</title>
 </head>
 <body>
+    <h3> Post: </h3>
+    <ul>
+    <form action="/" method="POST">
+        <input type = "text" name = "fname"/>
+        <input type = "text" name = "lname"/>
+        <input type = "submit" value = "create"/>
+    </form>
+    </ul>
+
+    <h3> Get: </h3>
     <ul>
         <% @users.each do |user| %>
-            <li><%= user.name %></li>
+            <li><%= user.fname + ' ' + user.lname %></li>
         <% end %>
+    </ul>
+
+    <h3> Delete: </h3>
+    <ul>
+        <% @users.each do |user| %>
+            <form action=<%="/user/#{user.id}/delete"%> method="POST">
+            <li><%= user.fname + ' ' + user.lname %></li>
+            <input type="submit" value="delete">
+            <input type="hidden" name="_method" value="DELETE">
+            </form>
+        <% end %>
+    </ul>
+    
+
+    <h3> Update: </h3>
+    <ul>
+    <% @users.each do |user| %>
+        <form action=<%="/user/#{user.id}/edit"%> method="POST">
+        <li><%= user.fname + ' ' + user.lname %></li>
+        <input id="hidden" type="hidden" name="_method" value="PATCH">
+        <input type="text" name="fname">
+        <input type="text" name="lname">
+        <input type="submit" value="edit">
+        </form>
+    <% end %>
     </ul>
 </body>
 </html>
