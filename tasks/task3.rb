@@ -11,79 +11,72 @@ Class should be able to:
 =end
 
 class Book
-    attr_accessor :author, :year, :status, :name
+    attr_accessor :author, :year, :name
 
-    def initialize(author, year, status, name)
+    def initialize(author, year, name)
         @author = author
         @year = year
-        @status = status
         @name = name
     end
 
     def show_info
-        "author: #{@author}, year: #{@year}, status: #{@status}, name: \"#{@name}\"."
+        "author: #{@author}, year: #{@year}, name: \"#{@name}\""
     end
 end
 
 
 class Library
-    attr_accessor :arr_books,  :counter
+    attr_accessor :arr_books, :counter, :status
 
     def initialize
-        @arr_books = []
+        @hash_library = {}
         @counter = 0 
+        @status = "available"
     end
 
     def add(book)
         @counter += 1
-        @arr_books << {
-            id: @counter,
-            info: book
-        }
+        @hash_library[@counter] = { info: book, status: @status }
     end
 
     def find_book(opts)
-        result = []
-        book_array = @arr_books
+        result = {}
+        books = @hash_library
         opts.each do |key, value| 
-            return find_by_id(book_array, value) if key == :id 
-            result = find_book_by(book_array, key, value)
-            book_array = result
+            return print_book(value, books[value]) if key == :id 
+            result = find_book_by(books, key, value)
+            books = result
         end
-        return result
+        result.each_pair { |key, value| print_book(key, value) }
     end
     
-    def find_book_by(array,  key, value) 
-        array.select { |book| book[:info].send(key) == value }
+    def find_book_by(hash, req_key, req_value) 
+        hash.select { |_, value| value[:info].send(req_key) == req_value }
     end
-
-    def find_by_id(array, id)
-        array.select { |book| book[:id] == id }
-    end 
     
-    def print_book(opts)
-        find_book(opts).each { |book| puts "ID: #{book[:id]}, #{book[:info].show_info}"  }
+    def print_book(key, value)
+        puts "ID: #{key}, #{value[:info].show_info}, status: #{value[:status]}"
     end
 
     def change_status(id_value, new_status)
-        @arr_books.each { |book|  book[:info].status = new_status if book[:id] == id_value }
+        @hash_library[id_value][:status] = new_status 
     end 
     
     def library_info
         puts "Library info:"
-        @arr_books.each { |book| puts "ID: #{book[:id]}, #{book[:info].show_info}" }
+        @hash_library.each_pair { |key, value| print_book(key, value) }
     end
 end
 
 library1 = Library.new
-book1 = Book.new('J.K. Rowling', 2000, 'available', 'Harry Potter and the Goblet of Fire')
-book2 = Book.new('Leo Tolstoy', 1867, 'available', 'War and Peace')
-book3 = Book.new('Lewis Carroll', 1865, 'available', 'Alice in Wonderland')
-book4 = Book.new('J.K. Rowling', 1867, 'available', 'Harry Potter and the Philosopher Stone')
+book1 = Book.new('J.K. Rowling', 2000, 'Harry Potter and the Goblet of Fire')
+book2 = Book.new('Leo Tolstoy', 1867, 'War and Peace')
+book3 = Book.new('Lewis Carroll', 1865, 'Alice in Wonderland')
+book4 = Book.new('J.K. Rowling', 1867, 'Harry Potter and the Philosopher Stone')
 
 [book1, book2, book3, book4].each { |book| library1.add(book) }
 
 library1.library_info
-library1.print_book({ id: 3 } )
+library1.find_book({ id: 3 } )
 library1.change_status(4, 'not available')
-library1.print_book({  year: 1867, author: 'J.K. Rowling' })
+library1.find_book({  year: 1867, author: 'J.K. Rowling' })
