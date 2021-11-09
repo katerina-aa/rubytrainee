@@ -4,45 +4,68 @@
     <title>Users</title>
 </head>
 <body>
-    <h3> Post: </h3>
-    <ul>
+<ul>
+    <h3> Post user: </h3>
     <form action="/" method="POST">
+        <p>Name: <br>
         <input type = "text" name = "fname"/>
+        <p>Surname: <br>
         <input type = "text" name = "lname"/>
-        <input type = "submit" value = "create"/>
-    </form>
-    </ul>
+        <p>Phone: <br>
+        <input type = "text" name = "phone"/>
+        <p>City: <br>
+        <input type = "text" name = "city"/>
+        <p>Age: <br>
+        <input type = "text" name = "age"/>
+        <p><input type = "submit" value = "create"/><br>
+    </form><br>
 
-    <h3> Get: </h3>
+    <h3> Get info about all users: </h3>
+    
+    <% @users.each do |user| %>
     <ul>
-        <% @users.each do |user| %>
-            <li><%= user.fname + ' ' + user.lname %></li>
-        <% end %>
+        <li><%= 'Name and Surname: ' + user.fname + ' ' + user.lname %></li>
+        <li><%= 'Phone: ' + user.phone %></li>
+        <li><%= 'City: ' + user.city %></li>
+        <li><%= 'Age: ' + user.age %></li><br>
     </ul>
-
-    <h3> Delete: </h3>
-    <ul>
-        <% @users.each do |user| %>
-            <form action=<%="/user/#{user.id}/delete"%> method="POST">
-            <li><%= user.fname + ' ' + user.lname %></li>
-            <input type="submit" value="delete">
-            <input type="hidden" name="_method" value="DELETE">
-            </form>
-        <% end %>
-    </ul>
+    <% end %>
     
 
-    <h3> Update: </h3>
+    <h3> Delete user: </h3>
+   
+    <% @users.each do |user| %>
+    <ul>
+        <form action=<%="/user/#{user.id}/delete"%> method="POST">
+        <li><%= user.fname + ' ' + user.lname %>
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"></li><br>
+        </form>
+    </ul>
+    <% end %>
+  
+    
+
+    <h3> Update user: </h3>
     <ul>
     <% @users.each do |user| %>
         <form action=<%="/user/#{user.id}/edit"%> method="POST">
-        <li><%= user.fname + ' ' + user.lname %></li>
+        <li><b><%= user.fname + ' ' + user.lname %></b></li>
         <input id="hidden" type="hidden" name="_method" value="PATCH">
-        <input type="text" name="fname">
-        <input type="text" name="lname">
-        <input type="submit" value="edit">
+        <p><%= "Name: " + user.fname %><br>
+        <input type = "text" name = "fname"/>
+        <p><%= "Surname: " + user.lname %><br>
+        <input type = "text" name = "lname"/>
+        <p><%= "Phone: " + user.phone %><br>
+        <input type = "text" name = "phone"/>
+        <p><%= "City: " + user.city %> <br>
+        <input type = "text" name = "city"/>
+        <p><%= "Age: " + user.age %> <br>
+        <input type = "text" name = "age"/>
+        <p><input type="submit" value="edit"><br>
         </form>
     <% end %>
     </ul>
+</ul>
 </body>
 </html>

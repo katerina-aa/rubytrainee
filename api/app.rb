@@ -1,30 +1,51 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require_relative 'models'
-
+require 'sinatra/basic_auth'
+require_relative 'user_controler'
 
 set :database, { adapter: 'sqlite3', database: 'development.sqlite3' }
 
+auth_data = { aadmin: "admin" }
+
+authorize do |username, password|
+  auth_data[username.to_sym] == password
+end
+
 get '/' do
-  @users = User.all
+  @users = UserControler.show_users()
   erb :index
 end
 
 post '/' do
-  User.create({ fname: params[:fname], lname: params[:lname] })
-  redirect to '/'
+  create_hash = {
+    fname: params[:fname],
+    lname: params[:lname],
+    phone: params[:phone],
+    city: params[:city],
+    age: params[:age]
+   }
+  UserControler.create_user(create_hash)
+  redirect '/'
 end
 
-delete '/user/:id/delete' do
-  @user = User.find_by(id: params[:id])
-  @user.destroy
-  redirect to '/'
+protect do
+  delete '/user/:id/delete' do
+    UserControler.delete_user(params[:id])
+    redirect '/'
+  end
 end
 
-patch '/user/:id/edit' do 
-  @user = User.find_by_id(params[:id])
-  @user.fname = params[:fname]
-  @user.lname = params[:lname]
-  @user.save
-  redirect to "/"
+protect do
+  patch '/user/:id/edit' do 
+    edit_hash = {
+      fname: params[:fname],
+      lname: params[:lname],
+      phone: params[:phone],
+      city: params[:city],
+      age: params[:age]
+     }
+    UserControler.edit_user(params[:id], edit_hash) 
+    redirect '/'
+  end
 end

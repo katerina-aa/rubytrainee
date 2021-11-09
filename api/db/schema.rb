@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 2021_11_05_115019) do
   create_table "users", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
+    t.string "phone"
+    t.string "city"
+    t.string "age"
   end
 
 end
