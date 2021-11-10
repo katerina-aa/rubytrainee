@@ -3,13 +3,17 @@ require 'sinatra/activerecord'
 require_relative 'models'
 require 'sinatra/basic_auth'
 require_relative 'user_controler'
+require 'rubygems'
 
 set :database, { adapter: 'sqlite3', database: 'development.sqlite3' }
+set :database, {adapter: "sqlite3", database: "auth.sqlite3"}
 
-auth_data = { aadmin: "admin" }
 
-authorize do |username, password|
-  auth_data[username.to_sym] == password
+use Rack::Auth::Basic, "Restricted Area" do |username, password|
+  auth_data = Auth.all
+  result = false
+  auth_data.each { |data| result = true if [username, password] == [data.username, data.password] }
+  result
 end
 
 get '/' do
@@ -29,23 +33,20 @@ post '/' do
   redirect '/'
 end
 
-protect do
-  delete '/user/:id/delete' do
-    UserControler.delete_user(params[:id])
-    redirect '/'
-  end
+delete '/user/:id/delete' do
+  UserControler.delete_user(params[:id])
+  redirect '/'
 end
 
-protect do
-  patch '/user/:id/edit' do 
-    edit_hash = {
-      fname: params[:fname],
-      lname: params[:lname],
-      phone: params[:phone],
-      city: params[:city],
-      age: params[:age]
-     }
-    UserControler.edit_user(params[:id], edit_hash) 
-    redirect '/'
-  end
+patch '/user/:id/edit' do 
+  edit_hash = {
+    fname: params[:fname],
+    lname: params[:lname],
+    phone: params[:phone],
+    city: params[:city],
+    age: params[:age]
+    }
+  UserControler.edit_user(params[:id], edit_hash) 
+  redirect '/'
 end
+

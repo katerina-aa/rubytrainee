@@ -6,3 +6,7 @@ class User < ActiveRecord::Base
     validates :phone, length: { is: 10, message: "has invalid length" }
     validates :fname, :lname, :city, :age, :phone, presence: true, on: :create
 end
+
+class Auth < ActiveRecord::Base
+    
+end

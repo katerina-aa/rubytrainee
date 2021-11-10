@@ -3,7 +3,7 @@ require 'sinatra/activerecord'
 
 class UserControler 
     def self.show_users()
-        @users = User.all
+       User.all
     end
 
     def self.create_user(hh)
