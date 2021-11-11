@@ -6,7 +6,7 @@
 <body>
 <ul>
     <h3> Post user: </h3>
-    <form action="/" method="POST">
+    <form action="/user/create" method="POST">
         <p>Name: <br>
         <input type = "text" name = "fname"/>
         <p>Surname: <br>
@@ -21,19 +21,16 @@
     </form><br>
 
     <h3> Get info about all users: </h3>
-    
     <% @users.each do |user| %>
-    <ul>
-        <li><%= 'Name and Surname: ' + user.fname + ' ' + user.lname %></li>
-        <li><%= 'Phone: ' + user.phone %></li>
-        <li><%= 'City: ' + user.city %></li>
-        <li><%= 'Age: ' + user.age %></li><br>
-    </ul>
+        <ul>
+            <li><%= 'Name and Surname: ' + user.fname + ' ' + user.lname %></li>
+            <li><%= 'Phone: ' + user.phone %></li>
+            <li><%= 'City: ' + user.city %></li>
+            <li><%= 'Age: ' + user.age %></li><br>
+        </ul>
     <% end %>
-    
 
     <h3> Delete user: </h3>
-   
     <% @users.each do |user| %>
     <ul>
         <form action=<%="/user/#{user.id}/delete"%> method="POST">
@@ -44,8 +41,6 @@
     </ul>
     <% end %>
   
-    
-
     <h3> Update user: </h3>
     <ul>
     <% @users.each do |user| %>
