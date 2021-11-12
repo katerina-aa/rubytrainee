@@ -15,11 +15,11 @@ end
 
 get '/' do
   @users = UserControler.show_users()
-  erb :index
+  erb :index 
 end
 
 post '/user/create' do
-  UserControler.create_user( 
+  @user = UserControler.create_user( 
     { 
       fname: params[:fname],
       lname: params[:lname],
@@ -28,16 +28,16 @@ post '/user/create' do
       age: params[:age]
     } 
   ) 
-  303
+  @user.errors.empty? ? 333 : 444
 end
 
 delete '/user/:id/delete' do
   UserControler.delete_user(params[:id])
-  303
+  333
 end
 
 patch '/user/:id/edit' do 
-  UserControler.edit_user(params[:id],
+  @user = UserControler.edit_user(params[:id],
     { 
       fname: params[:fname],
       lname: params[:lname],
@@ -46,5 +46,5 @@ patch '/user/:id/edit' do
       age: params[:age]
     }
   ) 
-  303
+  @user.errors.empty? ? 333 : 444
 end

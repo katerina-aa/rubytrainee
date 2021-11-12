@@ -7,7 +7,7 @@ class UserControler
     end
 
     def self.create_user(opts)
-       User.create(opts)
+        User.create(opts)
     end
    
     def self.delete_user(id_value)  
@@ -18,5 +18,7 @@ class UserControler
         @user = User.find_by_id(id_value)
         opts.each_pair { |key, value| @user.send("#{key}=", value) unless value.empty? }
         @user.save 
+        @user
     end
+
 end
