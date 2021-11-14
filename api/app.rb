@@ -48,3 +48,8 @@ patch '/user/:id/edit' do
   ) 
   @user.errors.empty? ? 333 : 444
 end
+
+
+error 444 do
+  "#{@user.errors.messages}"
+end
