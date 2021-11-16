@@ -6,6 +6,11 @@ class UserControler
        User.all
     end
 
+    def self.get_all_id()
+        users = User.all
+        users.collect{ |elem| elem.id }
+    end
+
     def self.create_user(opts)
         User.create(opts)
     end

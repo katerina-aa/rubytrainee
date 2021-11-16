@@ -8,10 +8,11 @@ require 'rubygems'
 set :database, { adapter: 'sqlite3', database: 'development.sqlite3' }
 set :database, {adapter: "sqlite3", database: "auth.sqlite3"}
 
+=begin
 use Rack::Auth::Basic, "Restricted Area" do |username, password|
   auth_data = Auth.all
   auth_data.any? { |data| [username, password] == [data.username, data.password] }
-end
+=end
 
 get '/' do
   @users = UserControler.show_users()
@@ -32,7 +33,8 @@ post '/user/create' do
 end
 
 delete '/user/:id/delete' do
-  UserControler.delete_user(params[:id])
+  id_arr = UserControler.get_all_id()
+  UserControler.delete_user(id_arr.sample)
   333
 end
 
@@ -48,7 +50,6 @@ patch '/user/:id/edit' do
   ) 
   @user.errors.empty? ? 333 : 444
 end
-
 
 error 444 do
   "#{@user.errors.messages}"

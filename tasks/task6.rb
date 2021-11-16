@@ -76,7 +76,7 @@ class WorkerAccountant < Worker
         super
         @salary_per_year = 2000
     end
-    
+
 end
 
 class WorkerLawyer < Worker
