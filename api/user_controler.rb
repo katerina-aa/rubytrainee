@@ -1,14 +1,12 @@
 require_relative 'models'
-require 'sinatra/activerecord'
 
 class UserControler 
     def self.show_users()
        User.all
     end
 
-    def self.get_all_id()
-        users = User.all
-        users.collect{ |elem| elem.id }
+    def self.get_user(id_value)
+        User.find_by_id(id_value)
     end
 
     def self.create_user(opts)
@@ -20,7 +18,7 @@ class UserControler
     end
       
     def self.edit_user(id_value, opts) 
-        @user = User.find_by_id(id_value)
+        @user = get_user(id_value)
         opts.each_pair { |key, value| @user.send("#{key}=", value) unless value.empty? }
         @user.save 
         @user

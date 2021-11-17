@@ -1,3 +1,5 @@
+require 'sinatra/activerecord'
+
 class User < ActiveRecord::Base  
     validates :fname, :lname, :city, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
     validates :fname, :lname, :city, length: { in: 2..20, message: "has invalid length" }

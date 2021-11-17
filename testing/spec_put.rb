@@ -1,10 +1,10 @@
-require_relative 'testing/spec_helper'
+require_relative 'spec_helper'
 
 RSpec.describe 'PUT' do
 
   app_cl = ApiClient.new
-  body = app_cl.generate_random_body
-  arr_id = UserControler.get_all_id()
+  body = DataGeneration.generate_random_body
+  arr_id = UserControler.show_users.map{ |user| user.id }
 
   context 'verify user can put' do
     it 'with valid ID and valid data' do

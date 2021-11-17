@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 RSpec.describe 'POST' do
 
   app_cl = ApiClient.new
-  body = app_cl.generate_random_body
+  body = DataGeneration.generate_random_body
 
   context 'verify user can post' do
     it 'with valid data' do

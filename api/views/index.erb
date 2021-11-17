@@ -20,9 +20,11 @@
         <p><input type = "submit" value = "create"/><br>
     </form><br>
 
+    
     <h3> Get info about all users: </h3>
     <% @users.each do |user| %>
         <ul>
+            <li><%= "ID: #{user.id}" %></li>
             <li><%= 'Name and Surname: ' + user.fname + ' ' + user.lname %></li>
             <li><%= 'Phone: ' + user.phone %></li>
             <li><%= 'City: ' + user.city %></li>

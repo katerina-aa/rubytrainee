@@ -1,6 +1,4 @@
 require 'sinatra'
-require 'sinatra/activerecord'
-require_relative 'models'
 require 'sinatra/basic_auth'
 require_relative 'user_controler'
 require 'rubygems'
@@ -19,6 +17,11 @@ get '/' do
   erb :index 
 end
 
+get '/user/:id/get' do
+  UserControler.get_user(params[:id])
+  333
+end
+
 post '/user/create' do
   @user = UserControler.create_user( 
     { 
@@ -33,8 +36,7 @@ post '/user/create' do
 end
 
 delete '/user/:id/delete' do
-  id_arr = UserControler.get_all_id()
-  UserControler.delete_user(id_arr.sample)
+  UserControler.delete_user(params[:id])
   333
 end
 
