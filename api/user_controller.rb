@@ -1,8 +1,8 @@
 require_relative 'models'
 
-class UserControler 
+class UserController 
     def self.show_users()
-       User.all
+        User.all
     end
     
     def self.get_user(id_value)

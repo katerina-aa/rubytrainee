@@ -4,7 +4,7 @@ RSpec.describe 'PUT' do
 
   app_cl = ApiClient.new
   body = DataGeneration.valid_body
-  arr_id = UserControler.show_users.map{ |user| user.id }
+  arr_id = UserController.show_users.map{ |user| user.id }
 
   context 'verify user can put' do
     it 'with valid ID and valid data' do

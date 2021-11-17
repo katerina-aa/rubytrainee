@@ -1,11 +1,10 @@
 require 'sinatra'
 require 'sinatra/basic_auth'
-require_relative 'user_controler'
+require_relative 'user_controller'
 require 'rubygems'
 require_relative 'models'
 
 set :database, { adapter: 'sqlite3', database: 'development.sqlite3' }
-set :database, {adapter: "sqlite3", database: "auth.sqlite3"}
 
 =begin
 use Rack::Auth::Basic, "Restricted Area" do |username, password|
@@ -14,17 +13,17 @@ use Rack::Auth::Basic, "Restricted Area" do |username, password|
 =end
 
 get '/' do
-  @users = UserControler.show_users()
+  @users = UserController.show_users()
   erb :index 
 end
 
 get '/user/:id/get' do
-  UserControler.get_user(params[:id])
+  UserController.get_user(params[:id])
   333
 end
 
 post '/user/create' do
-  @user = UserControler.create_user( 
+  @user = UserController.create_user( 
     { 
       fname: params[:fname],
       lname: params[:lname],
@@ -37,12 +36,12 @@ post '/user/create' do
 end
 
 delete '/user/:id/delete' do
-  UserControler.delete_user(params[:id])
+  UserController.delete_user(params[:id])
   333
 end
 
 patch '/user/:id/edit' do 
-  @user = UserControler.edit_user(params[:id],
+  @user = UserController.edit_user(params[:id],
     { 
       fname: params[:fname],
       lname: params[:lname],
