@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 RSpec.describe 'PUT' do
 
   app_cl = ApiClient.new
-  body = DataGeneration.generate_random_body
+  body = DataGeneration.valid_body
   arr_id = UserControler.show_users.map{ |user| user.id }
 
   context 'verify user can put' do

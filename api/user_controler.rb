@@ -4,7 +4,7 @@ class UserControler
     def self.show_users()
        User.all
     end
-
+    
     def self.get_user(id_value)
         User.find_by_id(id_value)
     end

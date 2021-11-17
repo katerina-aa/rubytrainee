@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/basic_auth'
 require_relative 'user_controler'
 require 'rubygems'
+require_relative 'models'
 
 set :database, { adapter: 'sqlite3', database: 'development.sqlite3' }
 set :database, {adapter: "sqlite3", database: "auth.sqlite3"}

@@ -8,7 +8,7 @@ RSpec.describe 'GET' do
       it 'info about all user' do
         response = app_cl.get_all()
         expect(response.status).to eq(200)
-    end
+      end
   end
   
 end
