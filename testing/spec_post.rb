@@ -17,7 +17,7 @@ RSpec.shared_examples 'invalid POST' do |parameter, mess, data|
   context 'verify user cannot be posted' do
     data.each do |value|
       it "with parameter #{parameter} with #{value}" do
-        body = DataGeneration.update_body( { parameter => value } )
+        body = DataGeneration.update_valid_body( { parameter => value } )
         response = app_cl.create_user(body) 
         expect(response.body.include?(mess)).to eq(true)
         expect(response.status).to eq(444)

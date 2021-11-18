@@ -23,8 +23,21 @@ class DataGeneration
         Array.new(range) { symbols.sample }.join
     end
 
-    def self.update_body(opts)
+    def self.update_valid_body(opts)
         valid_body.merge(opts)
     end
 
+    def self.update_empty_body(opts)
+        empty_body.merge(opts)
+    end
+
+    def self.empty_body
+        {
+            fname: '',
+            lname: '',
+            city: '',
+            phone: '',
+            age: ''
+        }
+    end
 end
