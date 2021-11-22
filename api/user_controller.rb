@@ -13,8 +13,9 @@ class UserController
         User.create(opts)
     end
    
-    def self.delete_user(id_value)  
-        User.destroy_by(id: id_value)
+    def self.delete_user(id_value)
+        user = get_user(id_value)
+        user ? user.destroy : nil
     end
       
     def self.edit_user(id_value, opts) 

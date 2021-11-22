@@ -1,4 +1,4 @@
-class DataGeneration
+module DataGeneration
     def self.valid_body
         {
             fname: letters_string(rand(2..20)),

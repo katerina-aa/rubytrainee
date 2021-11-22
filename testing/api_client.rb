@@ -1,10 +1,8 @@
 require 'faraday'
 
 class ApiClient
-  APP_JS = 'application/json'
-  ADMIN = 'admin'
 
-  def initialize
+  def initialize()  
     @base_url = 'http://localhost:4567/'
   end
 
@@ -12,8 +10,12 @@ class ApiClient
     app_request(:get, @base_url)
   end
 
-  def get_user()
-    app_request(:get, @base_url + "user/#{id}/create")
+  def get_user(id)
+    app_request(:get, @base_url + "user/#{id}/get")
+  end
+
+  def get_user_by(param)
+    app_request(:get, @base_url + "user/#{param}/get")
   end
 
   def create_user(body)
@@ -29,7 +31,8 @@ class ApiClient
   end
 
   private
-  def app_request(type, url, body = nil)
+  def app_request(type, url, body = {})
+    body.merge({ username: 'admin', password: 'admin' })
     Faraday.send(type, url, body)
   end
 end
