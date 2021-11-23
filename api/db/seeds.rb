@@ -7,7 +7,6 @@ users.each do |u|
   User.create(u)
 end
 
-=begin
 auth_data = [
   { username: 'admin', password: 'admin' },
   { username: 'katya', password: 'katya' }
@@ -16,4 +15,3 @@ auth_data = [
 auth_data.each do |u|
   Auth.create(u)
 end
-=end

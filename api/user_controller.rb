@@ -2,7 +2,10 @@ require_relative 'models'
 
 class UserController 
     def self.show_users()
-        User.all
+        # .map(&:to_s) --> when we do response - we need to give them strings, not objects
+        # believe we have to work on this, either convert to json
+        # anyway - check best practices on this
+        User.all.map(&:to_s)
     end
     
     def self.get_user(id_value)
