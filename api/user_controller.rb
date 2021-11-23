@@ -2,6 +2,12 @@ require_relative 'models'
 
 class UserController 
     def self.show_users()
+        # believe we have to work on this, either convert to json
+        # anyway - check best practices on this
+        # User.all.map(&:to_s) will work
+        # currently u return objects of class
+        # and sinatra has no idea how to return them as string in response
+        # u have to return string, json, or smth else
         User.all
     end
     

@@ -1,30 +1,29 @@
 require 'sinatra'
-require 'sinatra/basic_auth'
+#require 'sinatra/basic_auth'
 require_relative 'user_controller'
 require 'rubygems'
 require_relative 'models'
 
 set :database, { adapter: 'sqlite3', database: 'development.sqlite3' }
 
-# use Rack::Auth::Basic, "Restricted Area" do |username, password|
-#   auth_data = Auth.all
-#   puts auth_data, username, password
-#   auth_data.any?{ |data|  params[:username] == data.username && params[:password] ==  data.password  }
-# end
-
-
-authorize do |username, password|
-  username == 'admin' && password == 'admin'
+use Rack::Auth::Basic, "Restricted Area" do |username, password|
+  auth_data = Auth.all
+  puts auth_data.first.username
+  auth_data.any?{ |data| (username == data.username) && (password == data.password) }
 end
 
 
-protect do 
+# authorize do |username, password|
+#   username == 'admin' && password == 'admin'
+# end
+
+
   get '/' do
     @users = UserController.show_users()
-    erb :index 
+    #erb :index
   end
-end 
-protect do 
+
+
   get '/user/:id/get' do
     UserController.get_user(params[:id]) ? 222 : 443
   end
@@ -59,7 +58,7 @@ protect do
     ) 
     @user.errors.empty? ? 333 : 444
   end
-end
+
 
 error 444 do
   "#{@user.errors.messages}"
