@@ -31,9 +31,9 @@ class ApiClient
   end
 
   private
-  def app_request(type, url, body = nil)
+  def app_request(type, url, body = nil, auth = 'Basic YWRtaW46YWRtaW4=')
     Faraday.send(type, url) do |req|
-      req.headers['Authorization'] = 'Basic YWRtaW46YWRtaW4='
+      req.headers['Authorization'] = auth  
       req.body = body unless body.nil?
     end
   end

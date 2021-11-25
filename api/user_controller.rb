@@ -25,8 +25,13 @@ class UserController
       
     def self.edit_user(id_value, opts) 
         @user = User.find_by_id(id_value)
-        opts.each_pair { |key, value| @user.send("#{key}=", value) unless value.empty? }
+        counter = 0
+        opts.each_pair do |key, value| 
+            @user.send("#{key}=", value) unless value.empty? 
+            counter += 1 if value == ''
+        end
         @user.save 
+        return '' if counter == opts.size
         @user
     end
 

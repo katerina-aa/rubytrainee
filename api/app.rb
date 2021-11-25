@@ -56,6 +56,7 @@ patch '/user/:id/edit' do
       age: params[:age]
     }
   ) 
+  return 445 if @user == ''
   return 333, @user.to_json if @user.errors.empty?
   444
 end
@@ -63,6 +64,10 @@ end
 
 error 444 do
   "#{@user.errors.messages}"
+end
+
+error 445 do
+  "Nothing to change"
 end
 
 error 443 do

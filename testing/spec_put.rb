@@ -27,7 +27,7 @@ RSpec.shared_examples 'invalid PUT' do |parameter, mess, data|
         expect(response.status).to eq(444)
       end
 
-      it "with #{parameter} = #{value} and no record in DB" do
+      it "with #{parameter} = #{value} and no changes in DB" do
         app_cl.update_user(@id, value)
         response = app_cl.get_user_by(parameter, value[parameter]) 
         expect(response.status).to eq(443)
@@ -58,5 +58,21 @@ RSpec.describe 'PUT' do
 
   DataGenerator.new.valid_body.opts.each do |key, value|
     include_examples 'valid PUT', key, value
+  end
+  
+  context 'verify user cannot be changed' do
+    body = DataGenerator.new.empty_body.opts
+    it "with empty body and correct code received" do
+      response = app_cl.update_user(@id, body)
+      expect(response.body.include?('Nothing to change')).to eq(true)
+      expect(response.status).to eq(445)
+    end
+
+    it "with empty body and no changes in DB" do
+      app_cl.update_user(@id, body)
+      user = app_cl.get_user_by_id(@id).body
+      response = JSON.parse(user)
+      expect(response.has_value?('')).to eq(false)
+    end
   end
 end
