@@ -74,5 +74,12 @@ RSpec.describe 'PUT' do
       response = JSON.parse(user)
       expect(response.has_value?('')).to eq(false)
     end
+
+    it "with non-existing ID and correct code received" do
+      app_cl.delete_user(@id)
+      response = app_cl.update_user(@id, DataGenerator.new.valid_body.opts)
+      expect(response.body.include?('Nothing to change')).to eq(true)
+      expect(response.status).to eq(445)
+    end
   end
 end

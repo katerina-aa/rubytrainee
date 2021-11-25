@@ -61,7 +61,6 @@ patch '/user/:id/edit' do
   444
 end
 
-
 error 444 do
   "#{@user.errors.messages}"
 end

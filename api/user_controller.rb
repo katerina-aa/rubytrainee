@@ -25,6 +25,7 @@ class UserController
       
     def self.edit_user(id_value, opts) 
         @user = User.find_by_id(id_value)
+        return '' if @user == nil
         counter = 0
         opts.each_pair do |key, value| 
             @user.send("#{key}=", value) unless value.empty? 
