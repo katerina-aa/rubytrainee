@@ -12,13 +12,19 @@ RSpec.describe 'GET' do
   end
 
   context 'verify info about some user' do
+    before(:each) do
+      users_body = app_cl.get_all.body.gsub(/}{/, '}::{').split('::')
+      @id = users_body.map{ |user| JSON.parse(user)["id"] }.sample
+    end
+
     it 'can be got with valid ID' do
-      response = app_cl.get_user(IdGenerator.valid_id)
+      response = app_cl.get_user_by_id(@id)
       expect(response.status).to eq(222)
     end
 
     it 'cannot be got with invalid ID' do
-      response = app_cl.get_user(IdGenerator.invalid_id)
+      app_cl.delete_user(@id)
+      response = app_cl.get_user_by_id(@id)
       expect(response.status).to eq(443)
     end
   end

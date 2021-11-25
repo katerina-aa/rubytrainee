@@ -7,15 +7,15 @@ class ApiClient
   end
 
   def get_all()
-    app_request(:get, @base_url)
+    app_request(:get, @base_url + 'users/get')
   end
 
-  def get_user(id)
+  def get_user_by_id(id)
     app_request(:get, @base_url + "user/#{id}/get")
   end
 
-  def get_user_by(param)
-    app_request(:get, @base_url + "user/#{param}/get")
+  def get_user_by(key, value)
+    app_request(:get, @base_url + "user/#{key}/#{value}/get")
   end
 
   def create_user(body)
@@ -31,8 +31,10 @@ class ApiClient
   end
 
   private
-  def app_request(type, url, body = {})
-    body.merge({ username: 'admin', password: 'admin' })
-    Faraday.send(type, url, body)
+  def app_request(type, url, body = nil)
+    Faraday.send(type, url) do |req|
+      req.headers['Authorization'] = 'Basic YWRtaW46YWRtaW4='
+      req.body = body unless body.nil?
+    end
   end
 end
