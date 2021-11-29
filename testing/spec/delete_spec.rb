@@ -33,6 +33,15 @@ RSpec.describe 'Delete request' do
       app_cl.delete_user(@id, auth_data)
       response = app_cl.delete_user(@id, auth_data)
       expect(response.status).to eq(443)
+      expect(response.body.include?('Something works wrong')).to eq(true)
+    end
+  end
+
+  context 'when request with invalid ID(not number)' do
+    it 'response code is 443' do
+      response = app_cl.delete_user(SecureRandom.alphanumeric(10), auth_data)
+      expect(response.status).to eq(443)
+      expect(response.body.include?('Something works wrong')).to eq(true)
     end
   end
 end

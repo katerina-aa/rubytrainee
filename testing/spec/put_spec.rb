@@ -95,4 +95,13 @@ RSpec.describe 'Put request' do
       expect(response.body.include?('Nothing to change')).to eq(true)
     end
   end
+
+  context 'when request with invalid ID(not number)' do
+    it 'response code is 445' do
+      response = app_cl.update_user(SecureRandom.alphanumeric(10), DataGenerator.new.valid_body.opts, auth_data)
+      expect(response.status).to eq(445)
+      expect(response.body.include?('Nothing to change')).to eq(true)
+    end
+  end
+
 end
