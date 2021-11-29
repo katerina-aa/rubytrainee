@@ -24,17 +24,17 @@ RSpec.shared_examples 'invalid' do |parameter, mess, data|
 end
 
 RSpec.describe 'Post request' do
-  [:fname, :lname, :city].each do |param|
-    ErrorGenerator.new.err_for_str(:valid_body, param).err_blank(param).msg.each_pair do |key, value|
+  %i[fname lname city].each do |param|
+    err_with_blank(err_for_str(:valid_body, param), param).each_pair do |key, value|
       include_examples 'invalid', param, key, value
     end
   end
 
-  ErrorGenerator.new.err_for_phone(:valid_body).err_blank(:phone).msg.each_pair do |key, value|
+  err_with_blank(err_for_phone(:valid_body), :phone).each_pair do |key, value|
     include_examples 'invalid', :phone, key, value
   end
 
-  ErrorGenerator.new.err_for_age(:valid_body).err_blank(:age).msg.each_pair do |key, value|
+  err_with_blank(err_for_age(:valid_body), :age).each_pair do |key, value|
     include_examples 'invalid', :age, key, value
   end
 

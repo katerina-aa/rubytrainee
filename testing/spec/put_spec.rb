@@ -53,17 +53,17 @@ RSpec.describe 'Put request' do
     @id = @arr_id.sample
   end
 
-  [:fname, :lname, :city].each do |param|
-    ErrorGenerator.new.err_for_str(:empty_body, param).msg.each_pair do |key, value|
+  %i[fname lname city].each do |param|
+    err_for_str(:empty_body, param).each_pair do |key, value|
       include_examples 'invalid', param, key, value
     end
   end
 
-  ErrorGenerator.new.err_for_phone(:empty_body).msg.each_pair do |key, value|
+  err_for_phone(:empty_body).each_pair do |key, value|
     include_examples 'invalid', :phone, key, value
   end
 
-  ErrorGenerator.new.err_for_age(:empty_body).msg.each_pair do |key, value|
+  err_for_age(:empty_body).each_pair do |key, value|
     include_examples 'invalid', :age, key, value
   end
 
