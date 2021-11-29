@@ -103,5 +103,4 @@ RSpec.describe 'Put request' do
       expect(response.body.include?('Nothing to change')).to eq(true)
     end
   end
-
 end
