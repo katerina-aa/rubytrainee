@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require 'pry'
 require 'json'
-require_relative 'api_client.rb'
-require_relative 'spec_support.rb'
+require 'faraday'
+require_relative 'api_client'
+require_relative 'spec_support'

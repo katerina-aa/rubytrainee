@@ -1,16 +1,13 @@
+# File contains gems for DB, Api and testing
+
 source 'https://rubygems.org'
 
+gem 'rake'
 gem 'sinatra-activerecord'
 gem 'sqlite3'
-gem 'rake'
 
+gem 'faraday'
 gem 'pry'
 gem 'rspec'
-gem 'selenium-webdriver'
-gem 'capybara'
-gem 'cucumber'
-gem 'faraday'
-gem 'nokogiri'
-gem 'rack'
-gem 'ffi'
 
+gem 'reek'
