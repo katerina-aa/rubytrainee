@@ -26,10 +26,6 @@ class UserController
     user ? user.destroy : nil
   end
 
-  def self.delete_all
-    User.destroy_all
-  end
-
   def self.edit_user(id_value, opts)
     user = User.find_by_id(id_value)
     return '' if opts.values.all?('') || user.class != User

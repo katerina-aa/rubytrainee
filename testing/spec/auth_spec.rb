@@ -6,7 +6,7 @@ require 'securerandom'
 app_cl = ApiClient.new
 
 RSpec.shared_examples 'when invalid data is inserted' do |auth_data|
-  context "Username: #{auth_data[:username]} and Password: #{auth_data[:password]}" do
+  context "when Username is #{auth_data[:username]} and Password is #{auth_data[:password]}" do
     it 'response code is 401' do
       response = app_cl.get_all(auth_data)
       expect(response.status).to eq(401)

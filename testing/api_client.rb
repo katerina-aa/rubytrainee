@@ -32,10 +32,6 @@ class ApiClient
     app_request(:delete, "user/#{id}/delete", auth)
   end
 
-  def clean_db(auth)
-    app_request(:delete, '/users/delete', auth)
-  end
-
   private
 
   def app_request(type, url, auth, body = '')

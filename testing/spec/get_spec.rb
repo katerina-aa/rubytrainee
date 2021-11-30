@@ -7,7 +7,6 @@ RSpec.describe 'Get request' do
   auth_data = { username: 'admin', password: 'admin' }
 
   before(:all) do
-    app_cl.clean_db(auth_data)
     @arr_users = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
     @arr_id = @arr_users.map { |user| user['id'] }
   end
@@ -25,7 +24,7 @@ RSpec.describe 'Get request' do
     it 'list of all users is returned' do
       users_body = app_cl.get_all(auth_data).body.gsub(/}{/, '}::{').split('::')
       users_body = users_body.map { |user| JSON.parse(user) }
-      expect(users_body == @arr_users).to eq(true)
+      expect(@arr_users.all? { |elem| users_body.include?(elem) }).to eq(true)
     end
   end
 

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rspec/core/rake_task'
+require 'parallel_tests/tasks'
 
 RSpec::Core::RakeTask.new(:spec)
 

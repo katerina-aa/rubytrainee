@@ -23,7 +23,7 @@ end
 
 RSpec.shared_examples 'invalid' do |parameter, mess, data|
   data.each do |value|
-    context "when request with parameter #{parameter} = #{value}" do
+    context "when request with parameter #{parameter} = #{value[parameter]}" do
       it 'response code is 444' do
         response = app_cl.update_user(@id, value, auth_data)
         expect(response.body.include?(mess)).to eq(true)

@@ -50,10 +50,6 @@ delete '/user/:id/delete' do
   UserController.delete_user(params[:id]) ? 333 : 443
 end
 
-delete '/users/delete' do
-  UserController.delete_all ? 333 : 443
-end
-
 patch '/user/:id/edit' do
   @user = UserController.edit_user(params[:id],
     {
