@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="52" skipped="0" failures="0" errors="0" time="0.894336" timestamp="2021-11-30T17:40:31+02:00" hostname="Katerynas-Mac-mini.local">
+<properties>
+<property name="seed" value="34207"/>
+</properties>
+<testcase classname="spec.put_spec" name="Put request when request with parameter fname = X response code is 444" file="./spec/put_spec.rb" time="0.023237"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter fname = X no changes in DB" file="./spec/put_spec.rb" time="0.045289"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter fname = YetxDiyjgKkwBnalhZIPTduXJmGCEvHfbcpzWr response code is 444" file="./spec/put_spec.rb" time="0.023135"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter fname = YetxDiyjgKkwBnalhZIPTduXJmGCEvHfbcpzWr no changes in DB" file="./spec/put_spec.rb" time="0.021160"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter fname = 3498002 response code is 444" file="./spec/put_spec.rb" time="0.009838"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter fname = 3498002 no changes in DB" file="./spec/put_spec.rb" time="0.022291"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter fname = ,;&apos;$!*&amp; response code is 444" file="./spec/put_spec.rb" time="0.009607"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter fname = ,;&apos;$!*&amp; no changes in DB" file="./spec/put_spec.rb" time="0.016551"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter lname = A response code is 444" file="./spec/put_spec.rb" time="0.008629"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter lname = A no changes in DB" file="./spec/put_spec.rb" time="0.018595"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter lname = BVUXQYwrGEsTWIzkyjMldbotHxpPhSuZNF response code is 444" file="./spec/put_spec.rb" time="0.025744"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter lname = BVUXQYwrGEsTWIzkyjMldbotHxpPhSuZNF no changes in DB" file="./spec/put_spec.rb" time="0.016746"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter lname = 51395037827 response code is 444" file="./spec/put_spec.rb" time="0.008904"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter lname = 51395037827 no changes in DB" file="./spec/put_spec.rb" time="0.015730"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter lname = +&amp;&apos;$*,)!=(; response code is 444" file="./spec/put_spec.rb" time="0.008470"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter lname = +&amp;&apos;$*,)!=(; no changes in DB" file="./spec/put_spec.rb" time="0.017470"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter city = c response code is 444" file="./spec/put_spec.rb" time="0.008214"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter city = c no changes in DB" file="./spec/put_spec.rb" time="0.015916"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter city = npSGkDdLPzfRlBxKUgqXWJjcEuwIeFCHTtaVNQih response code is 444" file="./spec/put_spec.rb" time="0.008144"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter city = npSGkDdLPzfRlBxKUgqXWJjcEuwIeFCHTtaVNQih no changes in DB" file="./spec/put_spec.rb" time="0.015860"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter city = 5163682044 response code is 444" file="./spec/put_spec.rb" time="0.008333"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter city = 5163682044 no changes in DB" file="./spec/put_spec.rb" time="0.017814"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter city = ;+!&amp;&apos;$,*=) response code is 444" file="./spec/put_spec.rb" time="0.008262"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter city = ;+!&amp;&apos;$,*=) no changes in DB" file="./spec/put_spec.rb" time="0.015889"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter phone = 52336 response code is 444" file="./spec/put_spec.rb" time="0.008281"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter phone = 52336 no changes in DB" file="./spec/put_spec.rb" time="0.015988"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter phone = 8842107968897228 response code is 444" file="./spec/put_spec.rb" time="0.008707"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter phone = 8842107968897228 no changes in DB" file="./spec/put_spec.rb" time="0.015915"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter phone = CTKqoOXBi response code is 444" file="./spec/put_spec.rb" time="0.008321"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter phone = CTKqoOXBi no changes in DB" file="./spec/put_spec.rb" time="0.015904"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter phone = !&amp;,;$*&apos;=+ response code is 444" file="./spec/put_spec.rb" time="0.008428"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter phone = !&amp;,;$*&apos;=+ no changes in DB" file="./spec/put_spec.rb" time="0.017969"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter age = 2360272261708 response code is 444" file="./spec/put_spec.rb" time="0.008491"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter age = 2360272261708 no changes in DB" file="./spec/put_spec.rb" time="0.016217"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter age = UR response code is 444" file="./spec/put_spec.rb" time="0.009309"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter age = UR no changes in DB" file="./spec/put_spec.rb" time="0.017398"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter age = ,+ response code is 444" file="./spec/put_spec.rb" time="0.009115"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with parameter age = ,+ no changes in DB" file="./spec/put_spec.rb" time="0.017074"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with fname = iAangczEPCyDJHdx response code is 333" file="./spec/put_spec.rb" time="0.009823"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with fname = iAangczEPCyDJHdx record changed in DB" file="./spec/put_spec.rb" time="0.018049"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with lname = XJsRU response code is 333" file="./spec/put_spec.rb" time="0.009670"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with lname = XJsRU record changed in DB" file="./spec/put_spec.rb" time="0.053290"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with city = ELycGl response code is 333" file="./spec/put_spec.rb" time="0.009590"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with city = ELycGl record changed in DB" file="./spec/put_spec.rb" time="0.016654"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with phone = 52010591845 response code is 333" file="./spec/put_spec.rb" time="0.009054"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with phone = 52010591845 record changed in DB" file="./spec/put_spec.rb" time="0.017948"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with age = 10 response code is 333" file="./spec/put_spec.rb" time="0.009892"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with age = 10 record changed in DB" file="./spec/put_spec.rb" time="0.019100"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with empty body response code is 445" file="./spec/put_spec.rb" time="0.015259"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with empty body no changes in DB" file="./spec/put_spec.rb" time="0.022657"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with non-existing ID response code is 445" file="./spec/put_spec.rb" time="0.017270"></testcase>
+<testcase classname="spec.put_spec" name="Put request when request with invalid ID(not number) response code is 445" file="./spec/put_spec.rb" time="0.007742"></testcase>
+</testsuite>
