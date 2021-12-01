@@ -1,2 +1,0 @@
-rspec --format RspecJunitFormatter --out rspec.xml
-rake parallel:spec

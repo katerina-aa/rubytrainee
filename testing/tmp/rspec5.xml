@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec5" tests="4" skipped="0" failures="0" errors="0" time="0.063451" timestamp="2021-11-30T17:40:31+02:00" hostname="Katerynas-Mac-mini.local">
+<testsuite name="rspec5" tests="4" skipped="0" failures="0" errors="0" time="0.089304" timestamp="2021-11-30T17:55:22+02:00" hostname="Katerynas-Mac-mini.local">
 <properties>
-<property name="seed" value="23396"/>
+<property name="seed" value="12432"/>
 </properties>
-<testcase classname="spec.auth_spec" name="Authorization when valid Username and Password response code is 200" file="./spec/auth_spec.rb" time="0.014256"></testcase>
-<testcase classname="spec.auth_spec" name="Authorization when Username is 30ee476fcd3f770134f669786012c6ed and Password is admin response code is 401" file="./spec/auth_spec.rb" time="0.016932"></testcase>
-<testcase classname="spec.auth_spec" name="Authorization when Username is admin and Password is 8afd7f276d942022edc1734b73dbedc9 response code is 401" file="./spec/auth_spec.rb" time="0.013895"></testcase>
-<testcase classname="spec.auth_spec" name="Authorization when Username is f4b7292abb25620465d7582ca90bef73 and Password is 9e3318ba808fcafadd5b149831e5def4 response code is 401" file="./spec/auth_spec.rb" time="0.016843"></testcase>
+<testcase classname="spec.auth_spec" name="Authorization when valid Username and Password response code is 200" file="./spec/auth_spec.rb" time="0.019119"></testcase>
+<testcase classname="spec.auth_spec" name="Authorization when Username is d418620f89d7f1450cc693ad108629ed and Password is admin response code is 401" file="./spec/auth_spec.rb" time="0.022918"></testcase>
+<testcase classname="spec.auth_spec" name="Authorization when Username is admin and Password is 03d3925e69d070adc44894308f811ec8 response code is 401" file="./spec/auth_spec.rb" time="0.033721"></testcase>
+<testcase classname="spec.auth_spec" name="Authorization when Username is 36a647461fbab60411b622fb4831b7ec and Password is 040869d120a08c599e3b16d76ddba12c response code is 401" file="./spec/auth_spec.rb" time="0.011840"></testcase>
 </testsuite>
