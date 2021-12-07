@@ -6,7 +6,7 @@ require 'json'
 # The UserController class is responsible for managing User class
 class UserController
   def self.show_all
-    User.all.map(&:to_json)
+    User.all.as_json.to_json
   end
 
   def self.show_user_by_id(id_value)

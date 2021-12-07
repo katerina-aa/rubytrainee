@@ -29,6 +29,7 @@ class ApiClient
   end
 
   def delete_user(id, auth)
+    # puts "#{caller[0]} with id #{id}"
     app_request(:delete, "user/#{id}/delete", auth)
   end
 

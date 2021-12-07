@@ -22,8 +22,7 @@ RSpec.describe 'Get request' do
     end
 
     it 'list of all users is returned' do
-      users_body = app_cl.get_all(auth_data).body.gsub(/}{/, '}::{').split('::')
-      users_body = users_body.map { |user| JSON.parse(user) }
+      users_body = JSON.parse(app_cl.get_all(auth_data).body)
       expect(@arr_users.all? { |elem| users_body.include?(elem) }).to eq(true)
     end
   end
