@@ -14,7 +14,7 @@ use Rack::Auth::Basic, 'Restricted Area' do |username, password|
 end
 
 get '/users/get' do
-  UserController.show_all
+  body UserController.show_all
 end
 
 get '/user/:key/:value/get' do
