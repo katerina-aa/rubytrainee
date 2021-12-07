@@ -6,7 +6,7 @@ require 'rubygems'
 require_relative 'models'
 require 'json'
 
-set :database, { adapter: 'sqlite3', database: 'development.sqlite3' }
+set :database, { adapter: 'sqlite3', database: 'development.sqlite3', pool: 50, timeout: 5000 }
 
 use Rack::Auth::Basic, 'Restricted Area' do |username, password|
   auth_data = Auth.all

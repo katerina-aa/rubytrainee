@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: nouchka/sqlite3:latest
+  web:
+    build: .
+    command: bash -c "./bin/setup.sh"
+    volumes:
+      - .:/home
+    ports:
+      - "4567:4567"
+    depends_on:
+      - db
+    
+    #docker rmi -f $(docker images -aq)
