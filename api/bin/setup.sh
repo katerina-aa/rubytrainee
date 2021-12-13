@@ -4,34 +4,34 @@ set -m
 
 echo "Bundling gems"
 bundle install
-echo $?
 
-echo "Drops the database"
-bundle exec rake db:drop   
+# echo "Drops the database"
+# bundle exec rake db:drop   
 
-wait $!
-echo $?
-echo "Create database"
-bundle exec rake db:create
+# wait $!
 
-wait $!
-echo $?
-echo "Run migrations"
-bundle exec rake db:migrate
+# echo "Create database"
+bundle exec rake db:create --trace
 
-wait $!
-echo $?
-echo "Seed database"
-bundle exec rake db:seed
+# wait $!
 
-wait $!
-echo $?
-echo "Starting app server ..."
-bundle exec rackup --host 0.0.0.0 -p 4567 &
-echo $?
-cd testing
-echo $?
-bundle exec rake parallel:spec
+# echo "Run migrations"
+#bundle exec rake db:migrate
+
+# wait $!
+
+# echo "Seed database"
+# bundle exec rake db:seed
+
+# wait $!
+
+# echo "Starting app server ..."
+# bundle exec rackup --host 0.0.0.0 -p 4567 &
+
+# cd testing
+
+
+# bundle exec rake parallel:spec
 
 wait -n
 exec "$@"

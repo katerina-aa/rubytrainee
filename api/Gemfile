@@ -4,9 +4,12 @@
 
 source 'https://rubygems.org'
 
+gem 'activerecord-mysql2-adapter'
+gem 'mysql2'
+# gem 'pg'
 gem 'rake'
 gem 'sinatra-activerecord'
-gem 'sqlite3'
+gem 'sinatra-logger'
 
 gem 'faraday'
 gem 'pry'

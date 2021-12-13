@@ -7,12 +7,15 @@ RSpec.describe 'Get request' do
   auth_data = { username: 'admin', password: 'admin' }
 
   before(:all) do
-    @arr_users = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
-    @arr_id = @arr_users.map { |user| user['id'] }
+    @users_for_get = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
+    @id_for_get = @users_for_get.map { |user| user['id'] }
+    puts 'get'
+    puts @id_for_get
+    puts '---------'
   end
 
   after(:all) do
-    @arr_id.each { |id| app_cl.delete_user(id, auth_data) }
+    @id_for_get.each { |id| app_cl.delete_user(id, auth_data) }
   end
 
   context 'when request to get all users' do
@@ -23,20 +26,20 @@ RSpec.describe 'Get request' do
 
     it 'list of all users is returned' do
       users_body = JSON.parse(app_cl.get_all(auth_data).body)
-      expect(@arr_users.all? { |elem| users_body.include?(elem) }).to eq(true)
+      expect(@users_for_get.all? { |elem| users_body.include?(elem) }).to eq(true)
     end
   end
 
   context 'when request to get user with valid ID' do
     it 'response code is 222' do
-      response = app_cl.get_user_by_id(@arr_id.sample, auth_data)
+      response = app_cl.get_user_by_id(@id_for_get.sample, auth_data)
       expect(response.status).to eq(222)
     end
   end
 
   context 'when request to get user with invalid ID' do
     it 'response code is 443' do
-      id = @arr_id.sample
+      id = @id_for_get.sample
       app_cl.delete_user(id, auth_data)
       response = app_cl.get_user_by_id(id, auth_data)
       expect(response.status).to eq(443)

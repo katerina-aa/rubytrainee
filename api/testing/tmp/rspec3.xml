@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec3" tests="4" skipped="0" failures="0" errors="0" time="5.412052" timestamp="2021-12-07T12:19:52+02:00" hostname="Katerynas-Mac-mini.local">
+<testsuite name="rspec3" tests="4" skipped="0" failures="0" errors="0" time="0.405055" timestamp="2021-12-13T12:10:23+02:00" hostname="Katerynas-Mac-mini.local">
 <properties>
-<property name="seed" value="21026"/>
+<property name="seed" value="43202"/>
 </properties>
-<testcase classname="spec.delete_spec" name="Delete request when request with valid ID response code is 333" file="./spec/delete_spec.rb" time="0.013837"></testcase>
-<testcase classname="spec.delete_spec" name="Delete request when request with valid ID user is deleted in DB" file="./spec/delete_spec.rb" time="0.043358"></testcase>
-<testcase classname="spec.delete_spec" name="Delete request when request is sent twice response code is 443" file="./spec/delete_spec.rb" time="0.027625"></testcase>
-<testcase classname="spec.delete_spec" name="Delete request when request with invalid ID(not number) = Wmpab response code is 443" file="./spec/delete_spec.rb" time="0.017067"></testcase>
+<testcase classname="spec.delete_spec" name="Delete request when request with valid ID response code is 333" file="./spec/delete_spec.rb" time="0.073583"></testcase>
+<testcase classname="spec.delete_spec" name="Delete request when request with valid ID user is deleted in DB" file="./spec/delete_spec.rb" time="0.032598"></testcase>
+<testcase classname="spec.delete_spec" name="Delete request when request is sent twice response code is 443" file="./spec/delete_spec.rb" time="0.046363"></testcase>
+<testcase classname="spec.delete_spec" name="Delete request when request with invalid ID(not number) = vPHFkKhfrS response code is 443" file="./spec/delete_spec.rb" time="0.020139"></testcase>
 </testsuite>

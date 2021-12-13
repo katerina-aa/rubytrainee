@@ -6,15 +6,31 @@ require 'rubygems'
 require_relative 'models'
 require 'json'
 
-set :database, { adapter: 'sqlite3', database: 'development.sqlite3', pool: 50, timeout: 5000 }
+
+# configure :development do
+#   set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'api_db', pool: 5, username: 'kateryna', password: '1234456'}
+# end
+
+set :database, { adapter: 'mysql2',  database: 'my_db_name',  username: 'root', password: 'password2021' }
+
+
+# db_config_file = File.open('config/database.yml')
+# db_config = YAML.safe_load(db_config_file)
+
+# ActiveRecord::Base.establish_connection(db_config)
+
+# set :database, 'mysql://root:my_pass@127.0.0.1:3306/my_db_name'
+
+ActiveRecord::Base.logger = ActiveSupport::Logger.new($stdout)
+ActiveRecord::Base.logger.level = :warn
 
 use Rack::Auth::Basic, 'Restricted Area' do |username, password|
   auth_data = Auth.all
   auth_data.any? { |data| (username == data.username) && (password == data.password) }
 end
 
-get '/users/get' do
-  body UserController.show_all
+get '/users' do
+  UserController.show_all
 end
 
 get '/user/:key/:value/get' do

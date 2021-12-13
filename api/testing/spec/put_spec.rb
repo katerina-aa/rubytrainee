@@ -41,16 +41,19 @@ end
 
 RSpec.describe 'Put request' do
   before(:all) do
-    @arr_users = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
-    @arr_id = @arr_users.map { |user| user['id'] }
+    @users_for_put = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
+    @id_for_put = @users_for_put.map { |user| user['id'] }
+    puts 'put'
+    puts @id_for_put
+    puts '---------'
   end
 
   after(:all) do
-    @arr_id.each { |id| app_cl.delete_user(id, auth_data) }
+    @id_for_put.each { |id| app_cl.delete_user(id, auth_data) }
   end
 
   before(:each) do
-    @id = @arr_id.sample
+    @id = @id_for_put.sample
   end
 
   %i[fname lname city].each do |param|

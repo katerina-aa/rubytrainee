@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec4" tests="4" skipped="0" failures="0" errors="0" time="5.396205" timestamp="2021-12-07T12:19:51+02:00" hostname="Katerynas-Mac-mini.local">
+<testsuite name="rspec4" tests="4" skipped="0" failures="0" errors="0" time="0.337552" timestamp="2021-12-13T12:10:23+02:00" hostname="Katerynas-Mac-mini.local">
 <properties>
-<property name="seed" value="7687"/>
+<property name="seed" value="12165"/>
 </properties>
-<testcase classname="spec.get_spec" name="Get request when request to get all users response code is 200" file="./spec/get_spec.rb" time="0.014599"></testcase>
-<testcase classname="spec.get_spec" name="Get request when request to get all users list of all users is returned" file="./spec/get_spec.rb" time="0.038382"></testcase>
-<testcase classname="spec.get_spec" name="Get request when request to get user with valid ID response code is 222" file="./spec/get_spec.rb" time="0.008635"></testcase>
-<testcase classname="spec.get_spec" name="Get request when request to get user with invalid ID response code is 443" file="./spec/get_spec.rb" time="0.018225"></testcase>
+<testcase classname="spec.get_spec" name="Get request when request to get all users response code is 200" file="./spec/get_spec.rb" time="0.034625"></testcase>
+<testcase classname="spec.get_spec" name="Get request when request to get all users list of all users is returned" file="./spec/get_spec.rb" time="0.040227"></testcase>
+<testcase classname="spec.get_spec" name="Get request when request to get user with valid ID response code is 222" file="./spec/get_spec.rb" time="0.019712"></testcase>
+<testcase classname="spec.get_spec" name="Get request when request to get user with invalid ID response code is 443" file="./spec/get_spec.rb" time="0.047186"></testcase>
 </testsuite>

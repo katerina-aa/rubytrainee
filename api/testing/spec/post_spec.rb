@@ -41,18 +41,18 @@ RSpec.describe 'Post request' do
   valid_body = DataGenerator.new.valid_body.opts
 
   context "when request with valid body #{valid_body}" do
-    after(:each) { app_cl.delete_user(@user_id, auth_data) }
+    after(:each) { app_cl.delete_user(@id_for_post, auth_data) }
 
     it 'response code is 333' do
       response = app_cl.create_user(valid_body, auth_data)
-      @user_id = JSON.parse(response.body)['id']
+      @id_for_post = JSON.parse(response.body)['id']
       expect(response.status).to eq(333)
     end
 
     it 'new record in DB' do
       user = app_cl.create_user(valid_body, auth_data).body
-      @user_id = JSON.parse(user)['id']
-      response = app_cl.get_user_by_id(@user_id, auth_data)
+      @id_for_post = JSON.parse(user)['id']
+      response = app_cl.get_user_by_id(@id_for_post, auth_data)
       expect(response.status).to eq(222)
     end
   end

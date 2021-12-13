@@ -7,31 +7,34 @@ RSpec.describe 'Delete request' do
   auth_data = { username: 'admin', password: 'admin' }
 
   before(:all) do
-    @arr_users = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
-    @arr_id = @arr_users.map { |user| user['id'] }
+    @users_for_delete = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
+    @id_for_delete = @users_for_delete.map { |user| user['id'] }
+    puts 'delete'
+    puts @id_for_delete
+    puts '---------'
   end
 
-  after(:all) { @arr_id.each { |id| app_cl.delete_user(id, auth_data) } }
+  after(:all) { @id_for_delete.each { |id| app_cl.delete_user(id, auth_data) } }
 
-  before(:each) { @id = @arr_id.sample }
+  before(:each) { @rand_id = @id_for_delete.sample }
 
   context 'when request with valid ID' do
     it 'response code is 333' do
-      response = app_cl.delete_user(@id, auth_data)
+      response = app_cl.delete_user(@rand_id, auth_data)
       expect(response.status).to eq(333)
     end
 
     it 'user is deleted in DB' do
-      app_cl.delete_user(@id, auth_data)
-      response = app_cl.get_user_by_id(@id, auth_data)
+      app_cl.delete_user(@rand_id, auth_data)
+      response = app_cl.get_user_by_id(@rand_id, auth_data)
       expect(response.status).to eq(443)
     end
   end
 
   context 'when request is sent twice' do
     it 'response code is 443' do
-      app_cl.delete_user(@id, auth_data)
-      response = app_cl.delete_user(@id, auth_data)
+      app_cl.delete_user(@rand_id, auth_data)
+      response = app_cl.delete_user(@rand_id, auth_data)
       expect(response.status).to eq(443)
       expect(response.body.include?('Something works wrong')).to eq(true)
     end

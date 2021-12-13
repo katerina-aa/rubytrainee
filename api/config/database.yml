@@ -1,5 +1,30 @@
 development:
-  adapter: sqlite3
-  database: development.sqlite3
-  pool: 50
+  adapter: mysql2
+  encoding: utf8
+  database: my_db_name
+  username: root
+  password: password2021
+  host: localhost
+  port: 3306
+  pool: 5
   timeout: 5000
+
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: my_db_name
+  username: root
+  password: password2021
+  host: localhost
+  port: 3306
+  pool: 5
+  timeout: 5000
+  
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: api_db
+#   pool: 5
+#   username: kateryna
+#   password: 123456

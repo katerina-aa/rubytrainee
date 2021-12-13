@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec5" tests="4" skipped="0" failures="0" errors="0" time="5.285526" timestamp="2021-12-07T12:19:52+02:00" hostname="Katerynas-Mac-mini.local">
+<testsuite name="rspec5" tests="4" skipped="0" failures="0" errors="0" time="0.105925" timestamp="2021-12-13T12:10:23+02:00" hostname="Katerynas-Mac-mini.local">
 <properties>
-<property name="seed" value="4260"/>
+<property name="seed" value="19716"/>
 </properties>
-<testcase classname="spec.auth_spec" name="Authorization when valid Username and Password response code is 200" file="./spec/auth_spec.rb" time="0.015807"></testcase>
-<testcase classname="spec.auth_spec" name="Authorization when Username is 3e349edcf98443c22c486a1773489db1 and Password is admin response code is 401" file="./spec/auth_spec.rb" time="5.242356"></testcase>
-<testcase classname="spec.auth_spec" name="Authorization when Username is admin and Password is 09fce4f913f2700ff550ea2a7ee24963 response code is 401" file="./spec/auth_spec.rb" time="0.011886"></testcase>
-<testcase classname="spec.auth_spec" name="Authorization when Username is 4d789956c3335522f6135c3675ad2d0c and Password is 0f31132e5ca141e17bfd5316ebe89a4b response code is 401" file="./spec/auth_spec.rb" time="0.013731"></testcase>
+<testcase classname="spec.auth_spec" name="Authorization when valid Username and Password response code is 200" file="./spec/auth_spec.rb" time="0.068272"></testcase>
+<testcase classname="spec.auth_spec" name="Authorization when Username is 55720db00212beac8b7dcb03ccfa145d and Password is admin response code is 401" file="./spec/auth_spec.rb" time="0.010813"></testcase>
+<testcase classname="spec.auth_spec" name="Authorization when Username is admin and Password is 241dec7f4ff6c6fe937f4fcfacb4fc02 response code is 401" file="./spec/auth_spec.rb" time="0.008018"></testcase>
+<testcase classname="spec.auth_spec" name="Authorization when Username is fb820516111a49420ac755ba8ff45119 and Password is df87c9ce4c611364c936a0658c4112ee response code is 401" file="./spec/auth_spec.rb" time="0.016167"></testcase>
 </testsuite>

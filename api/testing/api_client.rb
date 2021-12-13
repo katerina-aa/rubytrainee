@@ -9,7 +9,7 @@ class ApiClient
   end
 
   def get_all(auth)
-    app_request(:get, '/users/get', auth)
+    app_request(:get, '/users', auth)
   end
 
   def get_user_by_id(id, auth)
@@ -29,13 +29,14 @@ class ApiClient
   end
 
   def delete_user(id, auth)
-    # puts "#{caller[0]} with id #{id}"
+    puts "#{caller[0]} with id #{id}"
     app_request(:delete, "user/#{id}/delete", auth)
   end
 
   private
 
   def app_request(type, url, auth, body = '')
+
     begin
       retries ||= 0
       @conn = Faraday.new(@base_url)

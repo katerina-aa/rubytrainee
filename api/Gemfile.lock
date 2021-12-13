@@ -6,6 +6,8 @@ GEM
     activerecord (6.1.4.1)
       activemodel (= 6.1.4.1)
       activesupport (= 6.1.4.1)
+    activerecord-mysql2-adapter (0.0.3)
+      mysql2
     activesupport (6.1.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
@@ -71,6 +73,7 @@ GEM
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    mysql2 (0.5.3)
     nio4r (2.5.8)
     parallel (1.21.0)
     parallel_tests (3.7.3)
@@ -114,6 +117,8 @@ GEM
     rspec_junit_formatter (0.4.1)
       rspec-core (>= 2, < 4, != 2.12.0)
     ruby2_keywords (0.0.5)
+    semantic_logger (4.8.2)
+      concurrent-ruby (~> 1.0)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -122,7 +127,9 @@ GEM
     sinatra-activerecord (2.0.23)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
-    sqlite3 (1.4.2)
+    sinatra-logger (0.3.2)
+      semantic_logger
+      sinatra
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -145,8 +152,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-mysql2-adapter
   faraday
   http
+  mysql2
   parallel_tests
   pry
   puma
@@ -156,7 +165,7 @@ DEPENDENCIES
   rspec
   rspec_junit_formatter
   sinatra-activerecord
-  sqlite3
+  sinatra-logger
   thin
   webrick
 
