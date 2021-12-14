@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2021_11_10_084513) do
 
-  create_table "auths", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "auths", force: :cascade do |t|
     t.string "username"
     t.string "password"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
     t.string "phone"

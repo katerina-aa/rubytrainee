@@ -6,8 +6,6 @@ GEM
     activerecord (6.1.4.1)
       activemodel (= 6.1.4.1)
       activesupport (= 6.1.4.1)
-    activerecord-mysql2-adapter (0.0.3)
-      mysql2
     activesupport (6.1.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
@@ -73,13 +71,13 @@ GEM
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    mysql2 (0.5.3)
     nio4r (2.5.8)
     parallel (1.21.0)
     parallel_tests (3.7.3)
       parallel
     parser (3.0.3.0)
       ast (~> 2.4.1)
+    pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -152,11 +150,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activerecord-mysql2-adapter
   faraday
   http
-  mysql2
   parallel_tests
+  pg
   pry
   puma
   rake

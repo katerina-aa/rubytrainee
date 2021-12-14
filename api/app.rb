@@ -7,11 +7,12 @@ require_relative 'models'
 require 'json'
 
 
-# configure :development do
-#   set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'api_db', pool: 5, username: 'kateryna', password: '1234456'}
-# end
+configure :development do
+  set :database, { adapter: 'postgresql', encoding: 'unicode', database: 'api_db', pool: 5, user: 'kateryna', password: '123456', host: 'localhost',  port: 5432 }
+end
 
-set :database, { adapter: 'mysql2',  database: 'my_db_name',  username: 'root', password: 'password2021' }
+#DB = PG.connect({ dbname: 'api_db', host: 'db', user: 'postgres', password: 'postgres' })
+# set :database, { adapter: 'mysql2',  database: 'my_db_name',  username: 'root', password: 'password2021' }
 
 
 # db_config_file = File.open('config/database.yml')
