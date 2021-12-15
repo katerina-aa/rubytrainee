@@ -9,9 +9,6 @@ RSpec.describe 'Delete request' do
   before(:all) do
     @users_for_delete = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
     @id_for_delete = @users_for_delete.map { |user| user['id'] }
-    puts 'delete'
-    puts @id_for_delete
-    puts '---------'
   end
 
   after(:all) { @id_for_delete.each { |id| app_cl.delete_user(id, auth_data) } }

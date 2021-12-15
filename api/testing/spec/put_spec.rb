@@ -43,9 +43,6 @@ RSpec.describe 'Put request' do
   before(:all) do
     @users_for_put = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
     @id_for_put = @users_for_put.map { |user| user['id'] }
-    puts 'put'
-    puts @id_for_put
-    puts '---------'
   end
 
   after(:all) do

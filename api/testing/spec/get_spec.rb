@@ -9,9 +9,6 @@ RSpec.describe 'Get request' do
   before(:all) do
     @users_for_get = Array.new(3) { JSON.parse(app_cl.create_user(DataGenerator.new.valid_body.opts, auth_data).body) }
     @id_for_get = @users_for_get.map { |user| user['id'] }
-    puts 'get'
-    puts @id_for_get
-    puts '---------'
   end
 
   after(:all) do

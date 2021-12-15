@@ -5,7 +5,6 @@ set -m
 echo "Bundling gems"
 bundle install
 
-
 echo "Drops the database"
 bundle exec rake db:drop   
 
@@ -27,12 +26,11 @@ bundle exec rake db:seed
 wait $!
 
 echo "Starting app server ..."
-bundle exec rackup --host 0.0.0.0 -p 4567 &
+bundle exec rackup --host 0.0.0.0 -p 4567 #&
 
-cd testing
+# cd testing
 
-
-bundle exec rake parallel:spec
+# bundle exec rake parallel:spec
 
 wait -n
 exec "$@"
