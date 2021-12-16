@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec2" tests="50" skipped="0" failures="0" errors="0" time="0.823674" timestamp="2021-12-16T11:19:42+02:00" hostname="Katerynas-Mac-mini.local">
+<properties>
+<property name="seed" value="46282"/>
+</properties>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname = x response code is 444" file="./spec/post_spec.rb" time="0.088752"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname = x no record in DB" file="./spec/post_spec.rb" time="0.047746"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname = DPvaYTnjSANVfiMxdqEpJrCXRygbFIzQWmeLU response code is 444" file="./spec/post_spec.rb" time="0.010482"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname = DPvaYTnjSANVfiMxdqEpJrCXRygbFIzQWmeLU no record in DB" file="./spec/post_spec.rb" time="0.018583"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname = 698464342286879 response code is 444" file="./spec/post_spec.rb" time="0.009033"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname = 698464342286879 no record in DB" file="./spec/post_spec.rb" time="0.017654"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname = +,)&apos;&amp;;=($!* response code is 444" file="./spec/post_spec.rb" time="0.020911"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname = +,)&apos;&amp;;=($!* no record in DB" file="./spec/post_spec.rb" time="0.019902"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname =  response code is 444" file="./spec/post_spec.rb" time="0.008678"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter fname =  no record in DB" file="./spec/post_spec.rb" time="0.016242"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname = g response code is 444" file="./spec/post_spec.rb" time="0.008412"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname = g no record in DB" file="./spec/post_spec.rb" time="0.016523"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname = BKdUyVwxcRszoIrhDqTNQFfgWYPZLECpbJMitAm response code is 444" file="./spec/post_spec.rb" time="0.008613"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname = BKdUyVwxcRszoIrhDqTNQFfgWYPZLECpbJMitAm no record in DB" file="./spec/post_spec.rb" time="0.015818"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname = 7056056700219 response code is 444" file="./spec/post_spec.rb" time="0.008152"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname = 7056056700219 no record in DB" file="./spec/post_spec.rb" time="0.015485"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname = +$,)(=&amp;!&apos;*; response code is 444" file="./spec/post_spec.rb" time="0.008236"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname = +$,)(=&amp;!&apos;*; no record in DB" file="./spec/post_spec.rb" time="0.015489"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname =  response code is 444" file="./spec/post_spec.rb" time="0.008802"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter lname =  no record in DB" file="./spec/post_spec.rb" time="0.015377"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city = O response code is 444" file="./spec/post_spec.rb" time="0.008385"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city = O no record in DB" file="./spec/post_spec.rb" time="0.015572"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city = RcEqhGDBSeTApblXVZQOPwrxojfCyUvHIsgkLdYainKJFW response code is 444" file="./spec/post_spec.rb" time="0.008147"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city = RcEqhGDBSeTApblXVZQOPwrxojfCyUvHIsgkLdYainKJFW no record in DB" file="./spec/post_spec.rb" time="0.016064"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city = 68768589 response code is 444" file="./spec/post_spec.rb" time="0.008750"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city = 68768589 no record in DB" file="./spec/post_spec.rb" time="0.015936"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city = ;$&apos;=&amp;),( response code is 444" file="./spec/post_spec.rb" time="0.009094"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city = ;$&apos;=&amp;),( no record in DB" file="./spec/post_spec.rb" time="0.019499"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city =  response code is 444" file="./spec/post_spec.rb" time="0.008519"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter city =  no record in DB" file="./spec/post_spec.rb" time="0.016464"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone = 4212048 response code is 444" file="./spec/post_spec.rb" time="0.008285"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone = 4212048 no record in DB" file="./spec/post_spec.rb" time="0.015814"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone = 157008542095668618 response code is 444" file="./spec/post_spec.rb" time="0.008101"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone = 157008542095668618 no record in DB" file="./spec/post_spec.rb" time="0.016160"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone = BJitfWquTpcQG response code is 444" file="./spec/post_spec.rb" time="0.007956"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone = BJitfWquTpcQG no record in DB" file="./spec/post_spec.rb" time="0.015239"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone = !),+=*(;&apos;&amp;$ response code is 444" file="./spec/post_spec.rb" time="0.007946"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone = !),+=*(;&apos;&amp;$ no record in DB" file="./spec/post_spec.rb" time="0.015277"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone =  response code is 444" file="./spec/post_spec.rb" time="0.047372"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter phone =  no record in DB" file="./spec/post_spec.rb" time="0.016238"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter age = 00762787233798735290 response code is 444" file="./spec/post_spec.rb" time="0.007982"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter age = 00762787233798735290 no record in DB" file="./spec/post_spec.rb" time="0.015718"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter age = bDi response code is 444" file="./spec/post_spec.rb" time="0.007738"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter age = bDi no record in DB" file="./spec/post_spec.rb" time="0.014747"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter age = *;, response code is 444" file="./spec/post_spec.rb" time="0.007673"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter age = *;, no record in DB" file="./spec/post_spec.rb" time="0.018434"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter age =  response code is 444" file="./spec/post_spec.rb" time="0.008035"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with invalid parameter age =  no record in DB" file="./spec/post_spec.rb" time="0.015907"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with valid body {:fname=&gt;&quot;XkyVKebD&quot;, :lname=&gt;&quot;bZdiLBlYNFGXHAEtaeno&quot;, :city=&gt;&quot;AFgDsTdhpnxH&quot;, :phone=&gt;&quot;939658012&quot;, :age=&gt;&quot;45&quot;} response code is 333" file="./spec/post_spec.rb" time="0.032731"></testcase>
+<testcase classname="spec.post_spec" name="Post request when request with valid body {:fname=&gt;&quot;XkyVKebD&quot;, :lname=&gt;&quot;bZdiLBlYNFGXHAEtaeno&quot;, :city=&gt;&quot;AFgDsTdhpnxH&quot;, :phone=&gt;&quot;939658012&quot;, :age=&gt;&quot;45&quot;} new record in DB" file="./spec/post_spec.rb" time="0.026255"></testcase>
+</testsuite>

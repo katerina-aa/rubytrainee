@@ -6,13 +6,13 @@ require 'rubygems'
 require_relative 'models'
 require 'json'
 
-# configure :development do
-#   set :database, { adapter: 'postgresql', encoding: 'unicode', database: 'api_db', pool: 50, timeout: 5000, user: 'kateryna', password: '123456', host: 'localhost',  port: 5432 }
-# end
-
 configure :development do
-  set :database, { adapter: 'postgresql', encoding: 'unicode', database: 'api_db',  pool: 50, timeout: 5000, user: 'postgres', password: 'postgres', host: 'db',  port: 5432 }
+  set :database, { adapter: 'postgresql', encoding: 'unicode', database: 'api_db', pool: 50, timeout: 5000, user: 'kateryna', password: '123456', host: 'localhost',  port: 5432 }
 end
+
+# configure :development do
+#   set :database, { adapter: 'postgresql', encoding: 'unicode', database: 'api_db',  pool: 50, timeout: 5000, user: 'postgres', password: 'postgres', host: 'db',  port: 5432 }
+# end
 
 ActiveRecord::Base.logger = ActiveSupport::Logger.new($stdout)
 ActiveRecord::Base.logger.level = :warn
