@@ -17,7 +17,7 @@ services:
   
   web:
     build: .
-   # command: bash -c "./bin/setup.sh"
+    command: bash -c "./bin/setup.sh"
 #     volumes:
 #       - .:/home
     ports:
