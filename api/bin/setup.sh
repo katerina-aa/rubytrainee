@@ -26,15 +26,11 @@ bundle exec rake db:seed
 wait $!
 
 echo "Starting app server ..."
-bundle exec rackup --host 0.0.0.0 -p 4567 
-
-wait $!
+bundle exec rackup --host 0.0.0.0 -p 4567 &
 
 cd testing
 
 bundle exec rake parallel:spec
-
-wait $!
 
 wait -n
 exec "$@"
