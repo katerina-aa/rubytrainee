@@ -26,7 +26,9 @@ bundle exec rake db:seed
 wait $!
 
 echo "Starting app server ..."
-bundle exec rackup --host 0.0.0.0 -p 4567 &
+bundle exec rackup --host 0.0.0.0 -p 4567 
+
+wait $!
 
 cd testing
 
