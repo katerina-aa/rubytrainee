@@ -12,10 +12,10 @@ gem 'sinatra-logger'
 gem 'faraday'
 gem 'pry'
 gem 'rspec'
+gem "rspec_junit_formatter"
 
 gem 'parallel_tests'
 gem 'reek'
-gem 'rspec_junit_formatter'
 
 gem 'http'
 gem 'puma'

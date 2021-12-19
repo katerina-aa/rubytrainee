@@ -5,7 +5,7 @@ require_relative 'spec_helper'
 # The ApiClient class is responsible for sending requests
 class ApiClient
   def initialize
-    @base_url = 'http://localhost:4567/'
+    @base_url = 'http://web:4567/'
   end
 
   def get_all(auth)
