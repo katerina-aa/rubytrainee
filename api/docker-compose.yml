@@ -18,8 +18,8 @@ services:
   web:
     build: .
     command: bash -c "./bin/setup.sh"
-    volumes:
-      - home:
+    # volumes:
+    #   - home:
     ports:
       - 4567:4567
     depends_on:
@@ -29,6 +29,6 @@ services:
   
 volumes:
   db_data:
-  home:
+
 networks:
   api_network:
