@@ -34,5 +34,7 @@ cd testing
 
 bundle exec rake parallel:spec
 
+wait $!
+
 wait -n
 exec "$@"
