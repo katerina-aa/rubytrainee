@@ -19,7 +19,7 @@ services:
     build: .
     command: bash -c "./bin/setup.sh"
     volumes:
-      - home:/
+      - home:
     ports:
       - 4567:4567
     depends_on:
