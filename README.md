@@ -17,9 +17,9 @@ The second part of tasks are located in "api" folder. There were created an auto
 docker compose up -d --build
 ```
 4. Wait about 2 minutes for the tests to complete and reports to be generated.
-5. Copy test reports from volume to working directory with the following command 
+5. Test reports location is  
 ```bash
-docker cp 'api-web-1:/home/testing/tmp/' './reports/'
+api-web-1:/home/testing/tmp/
 ```
 6. Use the following command for stop running container 
 ```bash
